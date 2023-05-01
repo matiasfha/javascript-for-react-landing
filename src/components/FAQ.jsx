@@ -8,30 +8,24 @@ const FAQData = [
       'El curso es completamente gratuito. Sin embargo, si deseas apoyar el curso y su continuo desarrollo, puedes invitarnos a un café en <a href="https://buymeacoffee.com/matiasfha">BuyMeACoffee</a>',
   },
   {
-    question: "¿Qué es Typescript?",
+    question: "¿Este curso es para principiantes?",
     answer:
-      "Typescript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto tipado de JavaScript que se compila a JavaScript simple y se ejecuta en cualquier navegador, plataforma o sistema que ejecute JavaScript.",
+      "Sí, este curso es ideal para desarrolladores web de cualquier nivel de experiencia que quieran fortalecer sus habilidades en Javascript y aplicarlas efectivamente en el desarrollo de aplicaciones web con React.",
   },
   {
-    question: "¿Por qué debo aprender Typescript?",
+    question: "¿Cuánto tiempo tomará terminar el curso?",
     answer:
-      "Si eres desarrollador web o de aplicaciones, aprender Typescript puede hacerte más eficiente en la detección de errores y en el aumento de la calidad del código. Además, puedes mejorar la escalabilidad y legibilidad del código, lo que puede ahorrar tiempo y dinero al evitar errores costosos en el futuro.",
+      "El curso consta de una serie de correos electrónicos que se adaptan a tu tiempo disponible para invertir en tu formación. Puedes tomar tanto o tan poco tiempo como necesites para completar el curso.",
   },
   {
-    question:
-      "¿Necesito ser un programador experimentado para tomar este curso?",
+    question: "¿Necesito algún software especial para tomar este curso?",
     answer:
-      "No, este curso cubre los fundamentos de Typescript y está diseñado tanto para programadores con experiencia como para principiantes en el campo del desarrollo de software. Si tienes conocimientos básicos de programación, podrás seguir este curso sin problemas.",
+      "No, solo necesitas acceso a un navegador web y una dirección de correo válida para inscribirte en el curso.",
   },
   {
-    question: "¿Cuál es la duración del curso?",
+    question: "¿Este curso cubre solo Javascript o también abarca otros temas?",
     answer:
-      "El curso consisten en 8 capitulos que son enviados cada 4 días. Cada capítulo incluye demos y desafíos, el tiempo que le dediques personal será siempre una mejora",
-  },
-  {
-    question: "¿Cómo puedo suscribirme al newsletter del curso?",
-    answer:
-      "Para suscribirte al newsletter del curso, dirígete a la sección de Hero en la página landing del curso y haz clic en el botón 'Suscribirse al newsletter'. Ingresa tus datos de contacto y recibirás la información y actualizaciones del curso en tu correo electrónico.",
+      "Este curso se enfoca en los conceptos esenciales de Javascript para aplicarlos de manera efectiva en el desarrollo de aplicaciones web con React. No cubre otros temas específicos.",
   },
 ];
 
@@ -54,9 +48,10 @@ export const FAQ = () => (
           </h2>
           <div className="mb-11 flex flex-wrap -m-1">
             {FAQData.map((item, index) => (
-              <div className="w-full p-1" 
-                  key={`${item.question}-${item.answer}`}
-                >
+              <div
+                className="w-full p-1"
+                key={`${item.question}-${item.answer}`}
+              >
                 <FAQBox
                   title={item.question}
                   content={item.answer}
