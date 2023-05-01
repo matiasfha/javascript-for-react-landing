@@ -1,0 +1,85 @@
+---
+import "@fontsource/inter";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const image =
+  "https://res.cloudinary.com/matiasfha/image/upload/v1682805379/Screenshot_2023-04-29_at_17.56.08_tskx3o.png";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+        <meta
+      property="og:description"
+      content="Aprende los fundamentos de Typescript y mejora la calidad de tus desarrollos. Descubre cómo utilizar el tipado de variables para ahorrar tiempo en la detección de errores, cómo prevenir errores en tiempo de ejecución y cómo mejorar la escalabilidad y legibilidad del código. Este curso es ideal para desarrolladores frontend y backend, estudiantes y programadores en busca de mejorar sus habilidades en el desarrollo de software. ¡Inscríbete hoy y obtén una ventaja competitiva en el mercado laboral!"
+    />
+    <meta
+      property="twitter:description"
+      content="Aprende los fundamentos de Typescript y mejora la calidad de tus desarrollos. Descubre cómo utilizar el tipado de variables para ahorrar tiempo en la detección de errores, cómo prevenir errores en tiempo de ejecución y cómo mejorar la escalabilidad y legibilidad del código. Este curso es ideal para desarrolladores frontend y backend, estudiantes y programadores en busca de mejorar sus habilidades en el desarrollo de software. ¡Inscríbete hoy y obtén una ventaja competitiva en el mercado laboral!"
+    />
+    <meta
+      property="description"
+      content="Aprende los fundamentos de Typescript y mejora la calidad de tus desarrollos. Descubre cómo utilizar el tipado de variables para ahorrar tiempo en la detección de errores, cómo prevenir errores en tiempo de ejecución y cómo mejorar la escalabilidad y legibilidad del código. Este curso es ideal para desarrolladores frontend y backend, estudiantes y programadores en busca de mejorar sus habilidades en el desarrollo de software. ¡Inscríbete hoy y obtén una ventaja competitiva en el mercado laboral!"
+    />
+    <meta
+      name="keywords"
+      content="typescript, programación, desarrollo web, escalabilidad, legibilidad de código, tipado de variables, POO, errores en tiempo de ejecución, prevención de errores,
+      curso typeescript, aprende typescript, fundamentos, fundamentos typescript, objects, records, uniones, never, any, unknown, type guards"
+    />
+
+    <meta name="twitter:creator" content="https://twitter.com/matiasfha/" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow, dofollow" />
+    <meta name="googlebot" content="index,follow, dofollow" />
+    <meta name="twitter:site" content="https://tsfundamentals.com" />
+    <meta property="og:site_name" content="https://tsfundamentals.com" />
+    <link rel="canonical" href="https://tsfundamentals.com" />
+    <meta property="og:url" content="https://tsfundamentals.com" />
+    <meta property="og:title" content="Curso: Fundamentos de Typescript" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/matiasfha/image/upload/v1682805379/Screenshot_2023-04-29_at_17.56.08_tskx3o.png"
+    />
+    <meta property="og:image:alt" content="Curso: Fundamentos de Typescript" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Curso: Fundamentos de Typescript" />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/matiasfha/image/upload/v1682805379/Screenshot_2023-04-29_at_17.56.08_tskx3o.png"
+    />
+    <link href="https://twitter.com/matiasfha" rel="me" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-spaceCadet">
+    <slot />
+    <style is:global>
+      html {
+        font-family: Inter;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script
+      defer
+      data-domain="tsfundamentals.com"
+      data-api="/plausible/api/event"
+      src="/plausible/js/script.js"
+    ></script>
+  </body>
+</html>

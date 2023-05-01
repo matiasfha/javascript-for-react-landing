@@ -1,0 +1,76 @@
+---
+import { QuoteIcon } from "../assets/icons/QuoteIcon";
+import testimonial1 from "../assets/images/testimonial1.png";
+import testimonial2 from "../assets/images/testimonial2.png";
+
+const testimonialsData = [
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "Nunca había utilizado Typescript antes, pero con este curso he aprendido algunos consejos y trucos valiosos para la programación. El contenido es muy fácil de entender y las explicaciones son claras y concisas. Recomendaría este curso a cualquier persona que desee mejorar su experiencia en Typescript",
+    image: testimonial1,
+  },
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "Este curso es excelente. El profesor es muy atento y responde rápidamente a todas mis preguntas. Si estás interesado en aprender Typescript, definitivamente deberías apuntarte a este curso",
+    image: testimonial2,
+  },
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "Este curso es excelente. El profesor es muy atento y responde rápidamente a todas mis preguntas. Si estás interesado en aprender Typescript, definitivamente deberías apuntarte a este curso",
+    image: testimonial2,
+  },
+];
+---
+
+<section
+  class="w-full flex justify-center pt-10 mb-16 relative bg-revolver-800"
+>
+  <div class="absolute -top-16" id="feedback"></div>
+  <div class="flex flex-col w-full lg:w-[1150px] justify-center">
+    <div
+    >
+      <div class="custom-block-subtitle text-center mb-6">Testimonials</div>
+      <div
+        class="custom-block-big-title text-center mb-16 px-8 sm:px-24 md:px-48"
+      >
+        Otros suscriptores dicen
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row gap-8 lg:gap-5 xl:gap-10 px-6 xl:px-0 items-center"
+      >
+        {
+          testimonialsData.map((testimonial) => (
+            <div
+              class="w-11/12 sm:w-4/5 md:w-[560px] lg:w-1/3 custom-border-gray-darker rounded-xl bg-customDarkBg3 flex flex-col px-6 py-4"
+            >
+              <div class="flex mb-2">
+                <QuoteIcon />
+              </div>
+              <div class="custom-content-text-white">
+                "{testimonial.content}"
+              </div>
+              <div class="flex mt-4 mb-2 xl:mt-8 xl:mb-4">
+                <img src={testimonial.image} alt="" width="45px" />
+                <div class="flex flex-col ml-4">
+                  <div class="custom-content-text-white font-medium">
+                    {testimonial.customerName}
+                  </div>
+                  <div class="custom-content-text-gray">
+                    {testimonial.customerTitle}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

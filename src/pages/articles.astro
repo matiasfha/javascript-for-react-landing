@@ -1,0 +1,131 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+
+const res = await fetch("http://matiashernandez.dev/topic/typescript/api", {
+  method: "GET",
+  headers: {
+    HandShake: "SecretToCheckForSanity",
+    tag: 'javascript'
+  },
+});
+// @TODO good place for zod
+const { enData, esData } = await res.json();
+---
+
+<Layout title="Artículos">
+  <Navbar />
+  <section
+    class="mx-full mx-auto bg-gradient-to-b from-spaceCadet to-caribbean py-12"
+  >
+    <h2 class="text-3xl text-gray-100 text-center py-16">
+      Encuentra algo del material sobre typescript que he publicado
+    </h2>
+    <div
+      class="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-8 transition duration-150 ease-in-out w-3/4 mx-auto"
+    >
+      {
+        esData.posts.map((entry) => (
+          <div class="flex flex-col">
+            <div class="md:mb-4 mb-2">
+              <a
+                class="group peer relative block w-full focus:outline-none"
+                href={`https://matiashernandez.dev/${entry.slug}`}
+              >
+                <div class="aspect-w-2 aspect-h-1 h-1/4 rounded-lg transition group-hover:ring-2 dark:ring-yellow-50 ring-green-400 ring-offset-2">
+                  <img
+                    alt={entry.title}
+                    class="rounded-lg object-cover cld-responsive"
+                    data-src="https://res.cloudinary.com/matiasfha/image/upload/f_auto,q_auto/124138cd725f3f40f4f366d44a26def1a4ae7d1f-2560x1440.jpg"
+                    src={entry.banner}
+                    height="173"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h2 class="md:text-2xl text-xl font-bold leading-tighter text-black dark:text-white">
+                  {entry.title}
+                </h2>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <section
+    class="mx-full mx-auto bg-gradient-to-b from-caribbean to-spaceCadet py-12"
+  >
+    <h1 class="text-3xl text-gray-100 text-center py-16">
+      Tambien encuentra material en inglés en otras publicaciones
+    </h1>
+    <div
+      class="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-8 transition duration-150 ease-in-out w-3/4 mx-auto"
+    >
+      {
+        enData.articles.map((entry) => (
+          <div class="flex flex-col">
+            <div class="md:mb-4 mb-2">
+              <a
+                class="group peer relative block w-full focus:outline-none"
+                href={entry.url}
+              >
+                <div class="aspect-w-2 aspect-h-1 h-1/4 rounded-lg transition group-hover:ring-2 dark:ring-yellow-50 ring-green-400 ring-offset-2">
+                  <img
+                    alt={entry.title}
+                    class="rounded-lg object-cover cld-responsive"
+                    data-src="https://res.cloudinary.com/matiasfha/image/upload/f_auto,q_auto/124138cd725f3f40f4f366d44a26def1a4ae7d1f-2560x1440.jpg"
+                    src={entry.image}
+                    height="173"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h2 class="md:text-2xl text-xl font-bold leading-tighter text-black dark:text-white">
+                  {entry.title}
+                </h2>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <h1 class="text-3xl text-gray-100 text-center py-16">
+      Y también en mi web 
+    </h1>
+
+    <div
+      class="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-8 transition duration-150 ease-in-out w-3/4 mx-auto"
+    >
+      {
+        enData.posts.map((entry) => (
+          <div class="flex flex-col">
+            <div class="md:mb-4 mb-2">
+              <a
+                class="group peer relative block w-full focus:outline-none"
+                href={`https://matiashernandez.dev/${entry.slug}`}
+              >
+                <div class="aspect-w-2 aspect-h-1 h-1/4 rounded-lg transition group-hover:ring-2 dark:ring-yellow-50 ring-green-400 ring-offset-2">
+                  <img
+                    alt={entry.title}
+                    class="rounded-lg object-cover cld-responsive"
+                    data-src="https://res.cloudinary.com/matiasfha/image/upload/f_auto,q_auto/124138cd725f3f40f4f366d44a26def1a4ae7d1f-2560x1440.jpg"
+                    src={entry.banner}
+                    height="173"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h2 class="md:text-2xl text-xl font-bold leading-tighter text-black dark:text-white">
+                  {entry.title}
+                </h2>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <Footer />
+</Layout>

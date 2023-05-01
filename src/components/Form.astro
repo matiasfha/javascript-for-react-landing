@@ -1,0 +1,68 @@
+<script>
+  const form = document.getElementById("form");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    try {
+      const response = await fetch("/subscribe", {
+        method: "POST",
+        body: formData,
+      });
+      await response.json();
+      window.location.href="/thanks"
+    } catch (e) {
+      console.error(e);
+      alert("Hubo un error");
+    }
+  });
+</script>
+<div class="flex flex-col gap-2 pb-12 justify-center prose prose-lg px-4 mx-auto">
+  <div class="flex flex-col items-center text-center">
+    <h3 class="max-w-md text-xl text-yellow-300">
+      Comienza el curso gratuito suscribiendote ahora.
+    </h3>
+  </div>
+  <form class="w-full mx-auto max-w-prose" id="form" method="POST">
+    <div data-sr-input-wrapper="true">
+      <label
+        data-sr-input-label="true"
+        for="name"
+        class="absolute w-1 h-1 p-0 -m-1 overflow-hidden whitespace-nowrap border-0"
+        >Tu Nomber</label
+      ><input
+        data-sr-input="true"
+        name="name"
+        id="name"
+        placeholder="Tu Nombre"
+        type="text"
+        class="backdrop-blur w-full mb-1 rounded bg-revolver-700 py-4 px-4 font-normal shadow-md "
+      />
+    </div><div data-sr-input-wrapper="true">
+      <label data-sr-input-label="true" for="email"
+        class="absolute w-1 h-4 overflow-hidden whitespace-nowrap border-0"
+        >Email<abbr title="required" data-sr-input-asterisk="true">*</abbr
+        ></label
+      ><input
+        data-sr-input="true"
+        name="email"
+        id="email"
+        placeholder="tunombre@example.com"
+        type="email"
+        class="backdrop-blur w-full mt-2 rounded bg-revolver-700 py-4 px-4 font-normal shadow-md "
+        required=""
+      />
+    </div>
+
+    <button
+      data-sr-button="true"
+      class="relative flex items-center justify-center overflow-hidden my-1 w-full rounded-md p-4 mt-4 font-medium text-xl text-gray-100 shadow-md bg-gradient-to-r from-fuchsia-400 to-blue-700"
+      type="submit"
+      ><span class="relative z-10">Comienza hoy</span><div
+        aria-hidden="true"
+        class="absolute top-0 left-0 items-center justify-center w-full h-full space-x-1 tracking-wide uppercase bg-white pointer-events-none bg-opacity-10 bg-blend-overlay"
+        style="background: linear-gradient(to right, rgba(132, 171, 255, 0) 100%, rgb(132, 171, 255) 200%, rgba(132, 171, 255, 0) 200%);"
+      >
+      </div>
+    </button>
+  </form>
+</div>

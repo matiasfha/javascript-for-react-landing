@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import Features1 from "../components/Features1.astro";
+import CourseDescription from "../components/CourseDescription.astro";
+import Testimonials from "../components/Testimonials.astro";
+import { FAQ } from "../components/FAQ";
+import Footer from "../components/Footer.astro";
+import { ScrollUpButton } from "../components/ScrollUpButton";
+import "../styles/Theme.css";
+import "../styles/Diagonals.css";
+import About from "../components/About.astro";
+import Form from "../components/Form.astro";
+---
+
+<Layout title="Fundamentos de Typescript">
+  <Navbar />
+  <Hero />
+  <CourseDescription />
+  <Features1 />
+ <!-- <Features2 />-->
+ <!-- About me --> 
+  <About />
+  <Form />
+  <!--<Testimonials />-->
+  <FAQ client:load />
+  <Footer />
+  <ScrollUpButton client:load />
+</Layout>

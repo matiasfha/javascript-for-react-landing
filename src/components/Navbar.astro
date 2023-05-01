@@ -1,0 +1,93 @@
+---
+import { GithubIcon } from "../assets/icons/GithubIcon";
+---
+
+<script>
+  const menu = document.getElementById("menu");
+  const articles = document.getElementById("articles");
+  const menuLinks = document.getElementById("menuLinks");
+
+  menu.addEventListener("click", () => {
+    menuLinks.classList.toggle("hidden");
+  });
+</script>
+<nav
+  class="w-full h-20 flex flex-col justify-center items-center fixed bg-revolver-800 z-40 lg:backdrop-blur-xl"
+>
+  <div
+    class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative"
+  >
+    <div>
+      <a class="navbar-link" href="/" aria-label="Home">
+        <div class="flex justify-start items-center grow basis-0">
+          <div class="text-white mr-2 text-6xl">
+            <img
+              src="https://res.cloudinary.com/matiasfha/image/upload/w_40,c_fill,ar_1:1,f_auto,q_auto,g_auto,r_max/v1682697818/logo-jfr"
+              alt="logo"
+            />
+          </div>
+          <div class="text-white font-['Inter'] font-bold text-xl">
+            <span
+              class="text-transparent bg-gradient-to-r from-yellow-300 to-darkPurple bg-clip-text"
+              >Javascript
+            </span>
+            <span
+              class="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-200 bg-clip-text"
+              >Para React</span
+            >
+          </div>
+        </div>
+      </a>
+    </div>
+    <div>
+      <div class="grow basis-0 justify-end hidden lg:flex gap-8">
+        <a
+          class="text-white custom-border-gray rounded-xl bg-revolver-700 hover:bg-revolver-600 border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
+          href="/articles"
+          aria-label="articles"
+        >
+          <span class="pt-px">Articulos</span>
+        </a>
+        <a
+          class="text-white custom-border-gray rounded-xl bg-revolver-700 hover:bg-revolver-600 border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
+          href="https://github.com/matiasfha/javascript-for-react-landing"
+          aria-label="source code"
+        >
+          <GithubIcon />
+          <span class="pt-px">Source code</span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="lg:hidden flex flex-col px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
+      id="menu"
+    >
+      <div class="w-5 h-0.5 bg-gray-500 mb-1"></div>
+      <div class="w-5 h-0.5 bg-gray-500 mb-1"></div>
+      <div class="w-5 h-0.5 bg-gray-500"></div>
+    </div>
+    <div class="lg:hidden">
+      <div
+        class="flex flex-col mt-16 hidden absolute top-4 left-0 bg-customDarkBg1 z-50 w-full items-center gap-10 pb-10 border-y border-solid border-customDarkBg3 pt-10"
+        id="menuLinks"
+      >
+        <a
+          class="navbar-link"
+          href="/articles"
+          aria-label="Articulos"
+          id="articles"
+        >
+          Artículos
+        </a>
+        <a
+          class="text-white custom-border-gray rounded-xl bg-customDarkBg2 hover:bg-customDarkBg3 border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
+          href="https://github.com/javascript-for-react-landing"
+          target="_blank"
+        >
+          <GithubIcon />
+          Source code
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,48 @@
+---
+import Form from "./Form.astro";
+---
+
+<style>
+  #home {
+    background-image: url("https://res.cloudinary.com/matiasfha/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1680880358/jpr-background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+</style>
+<section
+  class="w-screen flex justify-center items-center bg-revolver-800"
+  id="home"
+>
+  <div
+    class="w-full md:w-[800px] xl:w-[900px] flex flex-col justify-center items-center pt-16 md:pt-16 lg:pt-20 text-center"
+  >
+    <div
+      class="text-gray-100 text-sm sm:text-base mb-6 sm:mt-32 mt-16 font-bold"
+    >
+      ¡Bienvenido al curso!
+    </div>
+    <div
+      class="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide text-white px-8 sm:px-8 md:px-20 lg:px-4"
+    >
+      <span
+        class="text-transparent bg-gradient-to-r from-yellow-300 to-darkPurple bg-clip-text"
+        >Javascript
+      </span>
+      <span
+        class="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-200 bg-clip-text"
+        >Para React</span
+      >
+    </div>
+    <div
+      class="text-gray-100 prose prose-lg mt-10 p-4 bg-spaceCadet/80 rounded-xl"
+    >
+      Aprende a utilizar uno de los lenguajes de programación de mayor
+      crecimiento en la comunidad de desarrollo en la actualidad. Con nuestro
+      curso, aprenderás los fundamentos de Typescript, desde los conceptos
+      básicos de tipado hasta su uso en el mundo real. Explora cómo Typescript
+      ofrece una ventaja competitiva en el mercado laboral y acelera tu progreso
+      como programador.
+    </div>
+    <Form />
+  </div>
+</section>

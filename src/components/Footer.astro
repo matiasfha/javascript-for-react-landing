@@ -1,0 +1,117 @@
+---
+import { TwitterIcon } from "../assets/icons/TwitterIcon";
+
+const footerData = [
+  {
+    title: "Links",
+    items: [
+      { title: "Twitter", url: "https://twitter.com/matiasfha" },
+      { title: "Blog", url: "https://matiashernandez.dev" },
+      { title: "Youtube", url: "https://youtube.com/matiasfha" },
+      { title: "Twitch", url: "https://twitch.tv/matiasfha" },
+    ],
+  },
+  {
+    title: "Autor",
+    items: [
+      { title: "Sobre Mi", url: "https://matiashernandez.dev/about" },
+      { title: "Contáctame", url: "mailto:hola@matiashernandez.dev" },
+      {
+        title: "Agenda una mentoría",
+        url: "https://matiasfha.gumroad.com/l/meet-with-me",
+      },
+    ],
+  },
+];
+---
+
+<footer>
+  <div
+    class="pt-10 lg:pt-20 lg:pb-12 radius-for-skewed"
+  >
+    <div
+      class="container mx-auto px-4 w-4/5 md:w-11/12 lg:w-10/12 xl:w-4/5 2xl:w-2/3"
+    >
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/3 mb-16 lg:mb-0">
+          <div
+            class="flex justify-center lg:justify-start items-center grow basis-0"
+          >
+            <div class="text-white mr-2 text-6xl">
+              <img
+                src="https://res.cloudinary.com/matiasfha/image/upload/w_40,c_fill,ar_1:1,f_auto,q_auto,g_auto,r_max/v1682697818/logo-jfr"
+                alt="logo"
+              />
+            </div>
+            <div class="text-white font-['Inter'] font-bold text-xl">
+              <span
+                class="text-transparent bg-gradient-to-r from-yellow-300 to-darkPurple bg-clip-text"
+                >Javascript
+              </span>
+              <span
+                class="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-200 bg-clip-text"
+                >Para React</span
+              >
+            </div>
+          </div>
+          <p
+            class="mb-10 mt-4 sm:w-[22rem] lg:w-[20rem] xl:w-[24rem] text-gray-400 leading-loose text-center lg:text-left mx-auto lg:mx-0"
+          >
+            Curso gratuito directo en tu email: Fundamentos de Typescript
+          </p>
+          <div class="w-36 mx-auto lg:mx-0">
+            <a
+              class="inline-block w-10 h-10 mr-2 p-2 bg-customDarkBg2 custom-border-gray hover:bg-gray-700 rounded-xl"
+              href="https://twitter.com/matiasfha"
+            >
+              <TwitterIcon />
+            </a>
+          </div>
+        </div>
+        <div
+          class="w-full lg:w-2/3 lg:pl-16 hidden lg:flex flex-wrap justify-between"
+        >
+          <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
+            <ul>
+              {
+                footerData[0].items.map((item) => (
+                  <li class="mb-4">
+                    <a
+                      class="text-gray-400 hover:text-gray-300"
+                      href={item.url}
+                      aria-label=""
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 lg:w-auto">
+            <ul>
+              {
+                footerData[1].items.map((item) => (
+                  <li class="mb-4">
+                    <a
+                      class="text-gray-400 hover:text-gray-300"
+                      href={item.url}
+                      aria-label=""
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p
+        class="lg:text-center text-sm text-gray-400 border-t border-[rgb(255,255,255,0.2)] pt-12 mt-16 hidden lg:block"
+      >
+        &copy; 2022. MIT license.
+      </p>
+    </div>
+  </div>
+</footer>
