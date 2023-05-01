@@ -16,7 +16,7 @@ export const post: APIRoute = async ({ request, redirect }) => {
         api_key: import.meta.env.CONVERKIT_API_KEY,
         email,
         first_name: name,
-        tags: ["typescript"],
+        tags: ["=3816646"],
       }),
     });
 
